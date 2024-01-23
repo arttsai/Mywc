@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Mywc": {
+      "commandName": "Project",
+      "commandLineArgs": "-lwc myfile.txt"
+    }
+  }
+}
