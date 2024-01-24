@@ -7,14 +7,14 @@ namespace Mywc;
 //    -w, --word: 計算字數
 //    -c, --char: 計算字元數 
 //    -s, --silent: 不顯示詳細資訊, 僅列出總和
-//    -h, --help: 程式說明 (command line parser 會自動產生)
 //    -t, --type: 檔案類型 (附加名)
+//    -h, --help: 程式說明 (command line parser 會自動產生)
 //    path: 檔案或資料夾路徑
 
 
 public class Option
 {
-    [Option('l', "line", Default = true, HelpText = "計算列數")]
+    [Option('l', "line", Default = true, HelpText = "計算列數 (default)")]
     public bool CountingLine { get; set; }
 
     [Option('w', "word", HelpText = "計算字數")]
@@ -23,11 +23,11 @@ public class Option
     [Option('c', "char", HelpText = "計算字元數")]
     public bool CountingChar { get; set; }
 
-    [Option('s', "silent", HelpText = "不顯示詳細資訊", SetName = "NoShow")]
+    [Option('s', "silent", HelpText = "不顯示詳細資訊, 僅列出總和", SetName = "NoShow")]
     public bool Hide { get; set; }
 
     [Option('t', "type", HelpText = "檔案類型 (附加名)")]
-    public string? Type { get; set; }
+    public IEnumerable<string>? Type { get; set; }
 
     [Value(0, HelpText = "檔案或資料夾路徑")]
     public string? Path { get; set; }

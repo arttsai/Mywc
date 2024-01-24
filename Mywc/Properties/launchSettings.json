@@ -2,7 +2,7 @@
   "profiles": {
     "Mywc": {
       "commandName": "Project",
-      "commandLineArgs": "-lwc myfile.txt"
+      "commandLineArgs": "-t cs java -lwc  myfile.txt"
     }
   }
 }
