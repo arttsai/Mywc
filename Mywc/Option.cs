@@ -23,11 +23,11 @@ public class Option
     [Option('c', "char", HelpText = "計算字元數")]
     public bool CountingChar { get; set; }
 
-    [Option('s', "silent", HelpText = "不顯示詳細資訊, 僅列出總和", SetName = "NoShow")]
+    [Option('s', "silent", HelpText = "不顯示詳細資訊, 僅列出總和")]
     public bool Hide { get; set; }
 
     [Option('t', "type", HelpText = "檔案類型 (附加名)")]
-    public IEnumerable<string>? Type { get; set; }
+    public IEnumerable<string>? Types { get; set; }
 
     [Value(0, HelpText = "檔案或資料夾路徑")]
     public string? Path { get; set; }

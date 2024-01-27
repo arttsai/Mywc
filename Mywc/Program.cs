@@ -7,22 +7,22 @@
 //    -h, --help: 程式說明 (command line parser 會自動產生)
 //    path: 檔案或資料夾路徑
 
+
 using System.Text.Json;
 using CommandLine;
 using Mywc;
 
-var str = string.Join(',', args);
+var argsStr = string.Join(' ', args);
+Console.WriteLine(argsStr);
 Console.WriteLine();
 
-var rlt = Parser.Default.ParseArguments<Option>(args)
-    .WithParsed(Run);
-
+var result = Parser.Default.ParseArguments<Option>(args)
+    .WithParsed(option => Run(option));
 return;
 
 void Run(Option option)
 {
-    var jsonOption = new JsonSerializerOptions { WriteIndented = true};
-    var json = JsonSerializer.Serialize(option, jsonOption);
+    var jso = new JsonSerializerOptions() { WriteIndented = true };
+    var json = JsonSerializer.Serialize(option, jso);
     Console.WriteLine(json);
-
 }
