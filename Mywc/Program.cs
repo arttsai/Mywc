@@ -17,12 +17,18 @@ Console.WriteLine(argsStr);
 Console.WriteLine();
 
 var result = Parser.Default.ParseArguments<Option>(args)
-    .WithParsed(option => Run(option));
+    .WithParsedAsync(option => RunAsync(option));
 return;
 
-void Run(Option option)
+async Task RunAsync(Option option)
 {
-    var jso = new JsonSerializerOptions() { WriteIndented = true };
-    var json = JsonSerializer.Serialize(option, jso);
-    Console.WriteLine(json);
+    //var jso = new JsonSerializerOptions() { WriteIndented = true };
+    //var json = JsonSerializer.Serialize(option, jso);
+    //Console.WriteLine(json);
+
+    var wcCounter = new WcCounter();
+    (int lines, int words, int chars) = await wcCounter.RunAsync(option); 
+    if (lines > 0) Console.WriteLine($"Total Lines: {lines}");
+    if (words > 0) Console.WriteLine($"Total Words: {words}");
+    if (chars > 0) Console.WriteLine($"Total Chars: {chars}");
 }

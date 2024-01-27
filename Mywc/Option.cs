@@ -24,7 +24,7 @@ public class Option
     public bool CountingChar { get; set; }
 
     [Option('s', "silent", HelpText = "不顯示詳細資訊, 僅列出總和")]
-    public bool Hide { get; set; }
+    public bool Silent { get; set; }
 
     [Option('t', "type", HelpText = "檔案類型 (附加名)")]
     public IEnumerable<string>? Types { get; set; }
