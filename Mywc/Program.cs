@@ -7,7 +7,6 @@
 //    -h, --help: 程式說明 (command line parser 會自動產生)
 //    path: 檔案或資料夾路徑
 
-
 using System.Text.Json;
 using CommandLine;
 using Mywc;
@@ -17,7 +16,7 @@ Console.WriteLine(argsStr);
 Console.WriteLine();
 
 var result = Parser.Default.ParseArguments<Option>(args)
-    .WithParsedAsync(option => RunAsync(option));
+    .WithParsedAsync(RunAsync);
 return;
 
 async Task RunAsync(Option option)
@@ -25,6 +24,9 @@ async Task RunAsync(Option option)
     //var jso = new JsonSerializerOptions() { WriteIndented = true };
     //var json = JsonSerializer.Serialize(option, jso);
     //Console.WriteLine(json);
+
+    // 如果 option.Types 是 null, 將它設為包含 cs 的字串陣列
+    option.Types ??= new[] { "cs" };
 
     var wcCounter = new WcCounter();
     (int lines, int words, int chars) = await wcCounter.RunAsync(option); 

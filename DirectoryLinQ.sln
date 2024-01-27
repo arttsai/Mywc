@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectoryLinQ", "DirectoryLinQ\DirectoryLinQ.csproj", "{E1164452-6D0E-4C2E-A4EA-97E84F8D9404}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mywc", "Mywc\Mywc.csproj", "{52081276-23C0-491F-B34E-DEDC64964847}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E1164452-6D0E-4C2E-A4EA-97E84F8D9404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1164452-6D0E-4C2E-A4EA-97E84F8D9404}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1164452-6D0E-4C2E-A4EA-97E84F8D9404}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1164452-6D0E-4C2E-A4EA-97E84F8D9404}.Release|Any CPU.Build.0 = Release|Any CPU
 		{52081276-23C0-491F-B34E-DEDC64964847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{52081276-23C0-491F-B34E-DEDC64964847}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52081276-23C0-491F-B34E-DEDC64964847}.Release|Any CPU.ActiveCfg = Release|Any CPU
