@@ -8,21 +8,30 @@ public class WcCounter
     {
         var (lines, words, chars) = (0, 0, 0);
 
-        // 如果 option.Path 是檔案, option.IsFile 設為 true
-        if (File.Exists(option.Path))
+        try
         {
-            option.IsFile = true;
-            (lines, words, chars) = await CountFileAsync(option, option.Path);
+            // 如果 option.Path 是檔案, option.IsFile 設為 true
+            if (File.Exists(option.Path))
+            {
+                option.IsFile = true;
+                (lines, words, chars) = await CountFileAsync(option, option.Path);
+            }
+            else if (Directory.Exists(option.Path))
+            {
+                option.IsFile = false;
+                (lines, words, chars) = await CountDirectoryAsync(option, option.Path);
+            }
+            else
+            {
+                Console.WriteLine($"Path not found: {option.Path}");
+                return (lines, words, chars);
+            }
+
         }
-        else if (Directory.Exists(option.Path))
+        catch (Exception e)
         {
-            option.IsFile = false;
-            (lines, words, chars) = await CountDirectoryAsync(option, option.Path);
-        }
-        else
-        {
-            Console.WriteLine($"Path not found: {option.Path}");
-            return (lines, words, chars);
+            System.Console.WriteLine(e);
+            throw;
         }
 
         return (lines, words, chars);

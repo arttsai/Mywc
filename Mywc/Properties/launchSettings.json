@@ -2,7 +2,7 @@
   "profiles": {
     "Mywc": {
       "commandName": "Project",
-      "commandLineArgs": "-t cs java -lwc C:\\Users\\artts\\practice\\github\\MockEfDbSetWithNSubstitute"
+      "commandLineArgs": "-t cs java -lwc C:\\Users\\artts\\practice\\csharp\\DirectoryLinQ\\Mywc "
     }
   }
 }
